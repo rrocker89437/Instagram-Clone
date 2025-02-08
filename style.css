@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --font-body: "Source Sans 3", serif;
+
+  --fs-13: 0.8125rem;
+  --fs-12: 0.75rem;
+
+  --fw-900: 900;
+  --fw-300: 300;
+
+  --bg-main: #fff;
+  --bg-spacer: #c6c6c6;
+}
+
+/*? RESETS */
+/* ----------------------------------------------- */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-spacer);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*? Helper Classes */
+/* ----------------------------------------------- */
+
+section {
+  margin-bottom: 10px;
+  background-color: var(--bg-main);
+}
+
+.flex {
+  display: flex;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.padding-all {
+  padding: 10px 0;
+}
+
+.padding-10 {
+  padding: 10px 0px;
+}
+
+.padding-20 {
+  padding: 20px 0px 10px 0;
+}
+
+/*? Components */
+/* ----------------------------------------------- */
+
+/* HEADER */
+.header {
+  margin: 0 auto;
+  margin-bottom: 1px;
+  width: 375px;
+  height: auto;
+  background-color: var(--bg-main);
+
+  .header__logo {
+    width: 127px;
+    height: 60px;
+  }
+
+  .user-avatar {
+    width: 34px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+
+/* MAIN */
+.main {
+  margin: 0 auto;
+  width: 375px;
+}
+
+/* User Content */
+.user-content {
+  .user-profile-img {
+    border-radius: 50%;
+  }
+
+  .user-info {
+    margin-left: 7px;
+    height: 54px;
+
+    flex-direction: column;
+
+    .main-user {
+      font-size: var(--fs-13);
+      font-weight: var(--fw-900);
+    }
+
+    .main-user--location {
+      font-size: var(--fs-12);
+      font-weight: var(--fw-300);
+    }
+  }
+
+  .icons {
+    gap: 5px;
+
+    button {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+
+    .icon-heart {
+      transition: all 250ms ease-in-out;
+      &:hover {
+        animation: likeBtn 3.5s ease-in-out 0s 1 normal forwards;
+        filter: invert(31%) sepia(80%) saturate(7417%) hue-rotate(354deg)
+          brightness(93%) contrast(124%);
+      }
+    }
+
+    .icon-comment {
+      transition: all 250ms ease-in-out;
+      &:hover {
+        filter: invert(87%) sepia(0%) saturate(380%) hue-rotate(182deg)
+          brightness(85%) contrast(85%);
+      }
+    }
+
+    .icon-dm {
+      transition: all 250ms ease-in-out;
+      &:hover {
+        filter: invert(87%) sepia(0%) saturate(380%) hue-rotate(182deg)
+          brightness(85%) contrast(85%);
+      }
+    }
+  }
+
+  .user-likes {
+    margin-bottom: 12px;
+    font-size: var(--fs-13);
+    font-weight: var(--fw-900);
+  }
+
+  .user-name {
+    margin-bottom: 16px;
+    font-size: var(--fs-13);
+    font-weight: var(--fw-900);
+  }
+
+  .user-comment {
+    margin-left: 5px;
+    font-size: var(--fs-13);
+    font-weight: var(--fw-300);
+  }
+}
+
+/*? Animation*/
+/* ----------------------------------------------- */
+@keyframes likeBtn {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(1.09);
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(1.02);
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(1.13);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+/*? Layout */
+/* ----------------------------------------------- */
+
+.wrapper {
+  /* 375px */
+  max-width: 23.4375em;
+  margin: 0 auto;
+  padding: 0 10px;
+}
